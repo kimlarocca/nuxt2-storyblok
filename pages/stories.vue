@@ -12,19 +12,20 @@
 
 <script>
 export default {
+  name: 'Stories',
   asyncData({ app, redirect }) {
     return app.$storyapi
       .get('cdn/stories/', {
-        version: 'published'
+        version: 'published',
       })
       .then((res) => {
         return {
-          stories: res.data.stories
+          stories: res.data.stories,
         }
       })
       .catch((res) => {
         redirect('/error')
       })
-  }
+  },
 }
 </script>

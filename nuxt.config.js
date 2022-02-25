@@ -10,7 +10,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Equalicert Essentials',
+    title: 'Nuxt 3 / Storyblok Boilerplate Starter Project',
     htmlAttrs: {
       lang: 'en'
     },
@@ -23,19 +23,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Equalicert Essentials'
-      }
-    ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/png',
-        href: '/images/favicon.png'
-      },
-      {
-        rel: 'preconnect',
-        href: 'https://use.typekit.net',
-        crossorigin: true
+        content: 'Nuxt 3 / Storyblok Boilerplate Starter Project'
       }
     ],
     script: [
@@ -66,8 +54,7 @@ export default {
   components: {
     dirs: [
       '~/components',
-      '~/components/animations',
-      '~/components/charts'
+      '~/components/animations'
     ]
   },
 

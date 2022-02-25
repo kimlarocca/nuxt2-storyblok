@@ -1,5 +1,5 @@
 <template>
-  <div class="home l-container">
+  <div class="styleguide l-container">
     <v-spacer size="quad" />
     <h1 class="u-space--bottom">H1 Lorem Ipsum Dolor Sit Amet</h1>
     <h2 class="u-space--bottom">H2 Lorem Ipsum Dolor Sit Amet</h2>
@@ -88,21 +88,23 @@
 
 <script>
 export default {
-  name: 'Styleguide'
+  name: 'Styleguide',
 }
 </script>
 
 <style lang="scss">
-.colors div {
-  position: relative;
-  height: 150px;
+.styleguide {
+  .colors div {
+    position: relative;
+    height: 150px;
 
-  span {
-    background-color: white;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: var(--space-1);
+    span {
+      background-color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: var(--space-1);
+    }
   }
 }
 </style>

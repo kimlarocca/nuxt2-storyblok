@@ -4,28 +4,53 @@
     <the-header layout="right">
       <template #logo>
         <div class="logo">
-          <nuxt-link to="/dashboard" class="logo">
-            <img
-              src="/images/logo-minimalist.png"
-              width="51"
-              height="70"
-              alt="Equalicert Dashboard Logo"
-            />
-            <h6>Company Name</h6>
+          <nuxt-link to="/" class="logo">
+            <img src="/logo.png" alt="logo" />
+            <h6>Your Company Name</h6>
           </nuxt-link>
         </div>
       </template>
-      <template #button>
-        <nuxt-link to="settings" class="icon-only">
-          <v-button class="icon-only" aria-label="settings" icon="fal fa-cog" />
-        </nuxt-link>
-        <nuxt-link to="logout" class="icon-only">
-          <v-button
-            class="icon-only"
-            aria-label="logout"
-            icon="fal fa-arrow-right-from-bracket"
-          />
-        </nuxt-link>
+      <template #menu>
+        <the-menu
+          layout="right"
+          :primary-nav="[
+            {
+              url: 'http://www.google.com',
+              text: 'Primary Link 1',
+            },
+            {
+              url: 'http://www.google.com',
+              text: 'Primary Link 2',
+            },
+            {
+              url: 'http://www.google.com',
+              text: 'Primary Link 3',
+            },
+          ]"
+          :secondary-nav="[
+            {
+              url: 'http://www.google.com',
+              text: 'Secondary Link 1',
+            },
+            {
+              url: 'http://www.google.com',
+              text: 'Secondary Link 2',
+            },
+            {
+              url: 'http://www.google.com',
+              text: 'Secondary Link 3',
+            },
+          ]"
+        >
+          <template #logo>
+            <img src="/logo.png" alt="logo" />
+          </template>
+          <template #component>
+            <nuxt-link to="/contact">
+              <v-button> Contact Us </v-button>
+            </nuxt-link>
+          </template>
+        </the-menu>
       </template>
     </the-header>
     <v-spacer size="triple" />
@@ -34,24 +59,24 @@
     </main>
     <v-spacer size="triple" />
     <the-footer
-      company-name="Equalicert, Inc."
+      company-name="Your Company Name"
       :navigation="[
         {
-          url: 'https://www.instagram.com/equalicert/',
-          text: 'Instagram',
+          url: 'tel:+1-908-246-8546',
+          text: '(908) 246-8546',
         },
         {
-          url: 'https://www.facebook.com/equalicert',
-          text: 'Facebook',
+          url: 'mailto:Lukeelectric13@gmail.com',
+          text: 'Email Us',
         },
         {
-          url: 'https://equalicert.com/privacy/',
-          text: 'Privacy Policy',
+          url: 'https://www.google.com/maps/place/Luke+Electric+LLC/@40.7005691,-74.9635502,15z/data=!4m5!3m4!1s0x0:0x935b5fafd5a5016a!8m2!3d40.7005691!4d-74.9635502',
+          text: 'Directions',
         },
       ]"
     >
       <template #logo>
-        <img src="/images/logo.png" alt="Equalicert Logo" />
+        <img src="/logo.png" alt="logo" />
       </template>
     </the-footer>
   </div>
@@ -63,8 +88,9 @@ export default {
   mode: 'out-in',
   components: {
     TheFooter: () => import('vue-evolve/src/components/TheFooter'),
-    TheHeader: () => import('vue-evolve/src/components/TheHeader')
-  }
+    TheHeader: () => import('vue-evolve/src/components/TheHeader'),
+    TheMenu: () => import('vue-evolve/src/components/TheMenu'),
+  },
 }
 </script>
 
@@ -82,7 +108,7 @@ export default {
   }
 
   img {
-    max-width: 35px;
+    max-height: 35px;
     margin-right: var(--space-2);
   }
 
@@ -92,8 +118,8 @@ export default {
 }
 
 header {
-  .icon-only i {
-    color: var(--color-text) !important;
+  ul.secondary-navigation {
+    margin-left: 0;
   }
 }
 
