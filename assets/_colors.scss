@@ -1,0 +1,35 @@
+.low {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-weight: bold;
+}
+
+.mid {
+  background-color: var(--color-yellow);
+  color: var(--color-white);
+}
+
+.high {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.red {
+  color: var(--color-red);
+  font-weight: bold;
+}
+
+.yellow {
+  color: var(--color-yellow);
+  font-weight: bold;
+}
+
+.green {
+  color: var(--color-green);
+  font-weight: bold;
+}
+
+.medium-green {
+  color: var(--color-medium-green);
+  font-weight: bold;
+}

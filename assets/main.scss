@@ -1,0 +1,244 @@
+@import '~vue-evolve/src/assets/scss/main';
+@import 'settings';
+@import 'charts';
+@import 'colors';
+
+hr {
+  height: 0;
+  margin: 0;
+  border-bottom: 1px solid var(--color-light-gray);
+}
+
+ol,
+ul {
+  margin-left: 20px;
+}
+
+// links
+
+a,
+a:visited,
+a:active {
+  font-family: var(--font-family-primary);
+  border-bottom: solid 1px var(--color-link);
+  color: var(--color-link);
+
+  &:hover {
+    color: var(--color-link-hover);
+    border-bottom: solid 1px var(--color-link-hover);
+  }
+
+  i {
+    color: var(--color-icons);
+  }
+
+  &.plain {
+    border-bottom: none;
+  }
+}
+
+blockquote {
+  font-style: italic;
+  background-image: linear-gradient(180deg, var(--color-light-gray), var(--color-light-gray));
+  background-size: 100% 11px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  width: fit-content;
+  @extend .like-h2;
+  font-size: var(--font-size-10) !important;
+  padding: 0 var(--space-4);
+
+  p {
+    @extend .like-h2;
+    font-size: var(--font-size-10) !important;
+  }
+}
+
+code {
+  background: var(--color-light-gray);
+  padding: var(--space-3);
+  font-size: var(--font-size-4);
+  border-radius: 8px;
+}
+
+.clickable {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// buttons
+
+.button:not(.input-group-button .button) {
+  letter-spacing: 0.5px;
+  height: var(--forms-input-height);
+  padding-top: 8px !important;
+}
+
+// icons
+
+i {
+  font-size: var(--font-size-10);
+}
+
+.icon {
+  height: 45px;
+  width: 45px;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--color-primary-lighter);
+
+  svg {
+    fill: var(--color-primary);
+  }
+}
+
+.icon-link {
+  border-bottom: none;
+
+  &:hover {
+    border-bottom: none;
+  }
+
+  i {
+    font-size: 22px;
+  }
+}
+
+.icon-only,
+.icon-only:active:hover,
+.icon-only:hover {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.fa-exclamation-circle {
+  font-size: var(--font-size-5);
+  color: var(--color-tertiary);
+  margin-left: var(--space-1);
+}
+
+// table styles
+
+table {
+  @extend .apexchart;
+  font-family: var(--font-family-primary);
+  text-align: left;
+
+  th div {
+    transform: rotate(-60deg);
+  }
+
+  th,
+  td {
+    padding: var(--space-3);
+    border-bottom: 1px solid var(--color-light-gray);
+
+    &.category {
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+
+  tr {
+    vertical-align: top;
+  }
+}
+
+.benchmark {
+  font-size: var(--font-size-3);
+}
+
+// accordion overrides
+
+.accordion-header-wrapper,
+.accordion-content {
+  font-family: var(--font-family-primary);
+}
+
+.accordion-header-wrapper {
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-light-gray);
+  padding: 0 0 var(--space-2);
+}
+
+.accordion-header-active {
+  .accordion-header-wrapper {
+    border-bottom: 2px solid var(--color-light-gray);
+  }
+}
+
+.accordion-content .answer hr {
+  margin: var(--space-1) 0;
+}
+
+// error styles
+
+.error {
+  background-color: var(--color-red);
+  color: white;
+  font-weight: bold;
+  padding: var(--space-2);
+  text-transform: uppercase;
+  font-family: var(--font-family-primary);
+}
+
+// success styles
+
+.success {
+  color: var(--color-green);
+  font-weight: bold;
+}
+
+// filter styles
+
+select {
+  width: 100%;
+  @media all and (min-width: $large) {
+    min-width: 200px;
+    width: fit-content;
+    max-width: 100%;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media all and (min-width: $large) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.filters select {
+  max-width: 250px;
+}
+
+.filters label {
+  margin-bottom: var(--space-4);
+  @media all and (min-width: $large) {
+    margin: 0 var(--space-4) 0 0;
+  }
+}
+
+.clear-filters {
+  height: var(--forms-input-height);
+  line-height: 2.25rem;
+}
+
+// layout transitions
+
+.layout-enter-active,
+.layout-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 300ms;
+}
+
+.layout-enter,
+.layout-leave-to {
+  opacity: 0;
+}

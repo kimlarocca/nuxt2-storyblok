@@ -1,0 +1,423 @@
+// Breakpoints
+$small: 400px;
+$medium: 768px;
+$large: 1240px;
+$xlarge: 1400px;
+
+@mixin typeface($type, $size) {
+  font-family: var(--font-family-#{$type});
+  letter-spacing: var(--letter-spacing-#{$type});
+  font-weight: var(--font-weight-#{$type});
+  line-height: var(--line-height-#{$size});
+  font-size: var(--font-size-#{$size});
+}
+
+:root {
+  // Colors
+  --color-white: #ffffff;
+  --color-black: #000e29;
+  --color-dark-gray: #000e29;
+  --color-gray: #d3d3d3;
+  --color-light-gray: #f0f0f0;
+  --color-primary: #000e29;
+  --color-primary-lighter: #02293E;
+  --color-secondary: #a7e2e3; // 167, 226, 227
+  --color-secondary-lighter: #EFF9F9;
+  --color-secondary-darker: #4bbec0;
+  --color-tertiary: #7F7CAF; // 127, 124, 175
+  --color-tertiary-lighter: #CCCCDE;
+  --color-tertiary-darker: #3E3E74;
+  --color-quaternary: #f2cc8f; // 242, 204, 143
+  --color-quaternary-lighter: #fcf2e9;
+  --color-quaternary-darker: #db9f3d;
+  --color-quinary: #000e29;
+  --color-navigation-background: var(--color-primary);
+  --color-navigation-text: var(--color-white);
+  --color-icons: var(--color-tertiary);
+
+  --color-red: #DF3226;
+  --color-medium-red: #e86c81;
+  --color-light-red: #eab8b4;
+  --color-orange: #EC573C;
+  --color-yellow: #f2cc8f;
+  --color-light-yellow: #fde7b9;
+  --color-green: #00A100;
+  --color-medium-green: #61db8e;
+  --color-light-green: #d2e5d9;
+
+  // Fonts
+  --font-family-primary: "Hind", Helvetica, Arial, sans-serif;
+  --font-family-secondary: "Prompt", Helvetica, Arial, sans-serif;
+  --font-family-fa: "Font Awesome 5 Free", serif;
+
+  // Font Levers
+  --font-base: 18px;
+  --font-ratio: 1.125;
+
+  // Modular Scale
+  --font-size-1: calc(var(--font-size-2) / var(--font-ratio));
+  --font-size-2: calc(var(--font-size-3) / var(--font-ratio));
+  --font-size-3: calc(var(--font-size-4) / var(--font-ratio));
+  --font-size-4: calc(var(--font-size-5) / var(--font-ratio));
+  --font-size-5: calc(var(--font-size-6) / var(--font-ratio));
+  --font-size-6: var(--font-base);
+  --font-size-7: calc(var(--font-size-6) * var(--font-ratio));
+  --font-size-8: calc(var(--font-size-7) * var(--font-ratio));
+  --font-size-9: calc(var(--font-size-8) * var(--font-ratio));
+  --font-size-10: calc(var(--font-size-9) * var(--font-ratio));
+  --font-size-11: calc(var(--font-size-10) * var(--font-ratio));
+  --font-size-12: calc(var(--font-size-11) * var(--font-ratio));
+  --font-size-13: calc(var(--font-size-12) * var(--font-ratio));
+  --font-size-14: calc(var(--font-size-13) * var(--font-ratio));
+  --font-size-15: calc(var(--font-size-14) * var(--font-ratio));
+  --font-size-16: calc(var(--font-size-15) * var(--font-ratio));
+
+  --line-height-1: 1.4;
+  --line-height-2: 1.4;
+  --line-height-3: 1.4;
+  --line-height-4: 1.4;
+  --line-height-5: 1.8;
+  --line-height-6: 1.8;
+  --line-height-7: 1.1;
+  --line-height-8: 1.1;
+  --line-height-9: 1.2;
+  --line-height-10: 1.25;
+  --line-height-11: 1.2;
+  --line-height-12: 1.2;
+  --line-height-13: 1.2;
+  --line-height-14: 1.1;
+  --line-height-15: 1.1;
+  --line-height-16: 1;
+
+  // Typography (based on modular scale set above)
+
+  h1,
+  .like-h1 {
+    @include typeface(secondary, 12);
+    font-weight: 400;
+    line-height: 55px;
+    @media all and (min-width: $medium) {
+      @include typeface(secondary, 16);
+      font-weight: 400;
+      line-height: 70px;
+    }
+  }
+
+  h2,
+  .like-h2 {
+    @include typeface(primary, 10);
+    font-weight: 300;
+    @media all and (min-width: $medium) {
+      @include typeface(primary, 15);
+      font-weight: 300;
+    }
+  }
+
+  h3,
+  .like-h3 {
+    @include typeface(secondary, 10);
+    font-weight: 300;
+    letter-spacing: 1px;
+    @media all and (min-width: $medium) {
+      @include typeface(secondary, 12);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+  }
+
+  h4,
+  .like-h4 {
+    color: var(--color-tertiary);
+    @include typeface(primary, 8);
+    font-weight: 400;
+    @media all and (min-width: $medium) {
+      @include typeface(primary, 11);
+      font-weight: 400;
+    }
+  }
+
+  h5,
+  .like-h5 {
+    @include typeface(secondary, 6);
+    font-weight: 400;
+    text-transform: capitalize;
+    @media all and (min-width: $medium) {
+      @include typeface(secondary, 9);
+      font-weight: 400;
+    }
+  }
+
+  h6,
+  .like-h6 {
+    @include typeface(secondary, 6);
+    font-weight: 300;
+    text-transform: capitalize;
+    @media all and (min-width: $medium) {
+      @include typeface(secondary, 9);
+      font-weight: 300;
+    }
+  }
+
+  p,
+  .like-p,
+  .storyblok-rich-text,
+  .storyblok-rich-text i,
+  li {
+    @include typeface(primary, 5);
+    font-weight: 300;
+    letter-spacing: .5px;
+    @media all and (min-width: $medium) {
+      @include typeface(primary, 6);
+      font-weight: 300;
+      letter-spacing: .5px;
+    }
+  }
+
+  p.small {
+    font-size: var(--font-size-4);
+  }
+
+  // Spacing
+  --spacing-base-compact: 4px;
+  --spacing-increment-compact: 4px;
+  --spacing-base-default: 8px;
+  --spacing-increment-default: 8px;
+  --spacing-base-loose: 16px;
+  --spacing-increment-loose: 10px;
+
+  // Spacing Levers
+  --spacing-base: var(--spacing-base-default);
+  --spacing-increment: var(--spacing-increment-default);
+
+  // Spacing Tokens
+  --space-1: calc(var(--spacing-base) / 2);
+  --space-2: var(--spacing-base);
+  --space-3: calc(var(--space-2) + var(--spacing-increment));
+  --space-4: calc(var(--space-3) + var(--spacing-increment));
+  --space-5: calc(var(--space-4) + var(--spacing-increment));
+  --space-6: calc(var(--space-5) + var(--spacing-increment));
+  --space-7: calc(var(--space-6) + var(--spacing-increment));
+  --space-8: calc(var(--space-7) + var(--spacing-increment));
+  --space-9: calc(var(--space-8) + var(--spacing-increment));
+  --space-10: calc(var(--space-9) + var(--spacing-increment));
+  --space-11: calc(var(--space-10) + var(--spacing-increment));
+
+  // Layout
+  --max-width: 1240px;
+  --grid-gutter: 32px;
+  --grid-gutter-large: 72px;
+
+  // Animation
+  --transition: .25s ease-out;
+  --opacity-on-hover: .7;
+
+  // Main Styles
+  --color-text: var(--color-black);
+  --color-text-inverse: var(--color-white);
+  --color-text-error: #cc0000;
+  --color-background: var(--color-white);
+  --color-background-inverse: var(--color-quaternary);
+  --color-background-muted: var(--color-light-gray);
+  --color-background-muted-inverse: var(--color-quinary);
+  --font-family: var(--font-family-primary);
+  --color-hr: var(--color-light-gray);
+  --hr-height: 1px;
+
+  // Links
+  --color-link: var(--color-text);
+  --link-decoration: none;
+  --color-link-hover: var(--color-tertiary);
+  --link-decoration-hover: none;
+
+  // Forms
+  --forms-input-width: 100%;
+  --forms-input-height: 3rem;
+  --forms-text-area-height: 100px;
+  --forms-input-padding: var(--space-1) var(--space-2);
+  --forms-input-font-family: var(--font-family);
+  --forms-input-font-size: var(--font-base);
+  --forms-input-color: var(--color-text);
+  --forms-input-border: 1px solid var(--color-background-muted);
+  --forms-input-outline-color: 1px solid var(--color-secondary);
+  --forms-inline-button-padding: 0 1rem;
+
+  // Buttons
+  --button-background: var(--color-text);
+  --button-text: var(--color-white);
+  --button-border: 2px solid var(--color-text);
+  --button-background-hover: var(--color-text);
+  --button-text-hover: var(--color-white);
+  --button-border-hover: 2px solid var(--color-text);
+  --button-font-size: var(--font-size-6);
+  --button-font-weight: 500;
+  --button-text-transform: uppercase;
+  --button-padding: var(--space-1) var(--space-4);
+
+  // Menu
+  --menu-width: 350px;
+  --menu-text: var(--color-text);
+  --menu-background: var(--color-background-muted);
+
+  // Breadcrumbs
+  --breadcrumbs-text: var(--color-text);
+  --breadcrumbs-link-color: var(--color-link);
+  --breadcrumbs-link-color-hover: var(--color-link-hover);
+  --breadcrumbs-spacing: var(--space-3);
+  --breadcrumbs-seperator: '/';
+  --breadcrumbs-seperator-color: var(--color-text);
+
+  // Cards
+  --card-background: var(--color-background-muted);
+  --card-header-text: var(--color-text);
+  --card-header-background: var(--color-primary);
+  --card-color-link: var(--color-link);
+
+  // Icons
+  --icon-color: var(--color-text);
+  --icon-background-color: transparent;
+  --icon-color-hover: var(--color-text);
+  --icon-background-color-hover: transparent;
+  --icon-size: var(--font-base);
+
+  // Image With Caption
+  --image-with-caption-text: var(--color-white);
+  --image-with-caption-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+
+  // Callout Banner
+  --callout-banner-text: var(--color-text);
+  --callout-banner-background-color: var(--color-background-muted);
+
+  // Header
+  --header-background: var(--color-background);
+  --header-color: var(--color-text);
+  --header-link-color: var(--color-text);
+  --header-link-color-hover: var(--color-primary);
+
+  // Footer
+  --footer-color: var(--color-text);
+  --footer-font-size: var(--font-size-5);
+  --footer-link-color: var(--color-text);
+  --footer-background: var(--color-background);
+  --footer-padding: var(--space-6);
+  --footer-alignment: center;
+}
+
+@mixin dark-mode {
+  // Colors
+  --color-white: #ffffff;
+  --color-black: #222222;
+  --color-dark-gray: #383838;
+  --color-gray: #9d9d9d;
+  --color-light-gray: #c9c9c9;
+  --color-primary: #60BDEA;
+  --color-secondary: #EA6078;
+  --color-tertiary: #6078ea;
+  --color-quaternary: #1B213B;
+  --color-quinary: #262D47;
+
+  // Main Styles
+  --color-text: var(--color-text-inverse);
+  --color-text-error: #ffbcbc;
+  --color-background: var(--color-background-inverse);
+  --color-background-muted: var(--color-dark-gray);
+  --color-background-highlighted: var(--color-light-gray);
+  --color-hr: var(--color-gray);
+
+  // Links
+  --color-link: var(--color-tertiary);
+  --color-link-hover: var(--color-tertiary);
+
+  // Buttons
+  --button-background: var(--color-secondary);
+  --button-text: var(--color-white);
+  --button-border: 2px solid var(--color-secondary);
+  --button-background-hover: var(--color-secondary);
+  --button-text-hover: var(--color-white);
+  --button-border-hover: 2px solid var(--color-secondary);
+
+  // Menu
+  --menu-text: var(--color-text-inverse);
+  --menu-background: var(--color-background-muted-inverse);
+
+  // Forms
+  --forms-input-border: 1px solid var(--color-white);
+
+  // Breadcrumbs
+  --breadcrumbs-text: var(--color-text);
+  --breadcrumbs-seperator-color: var(--color-text);
+
+  // Callout Banner
+  --callout-banner-text: var(--color-text);
+  --callout-banner-background-color: var(--color-background-muted);
+
+  // Cards
+  --card-background: var(--color-background-muted);
+  --card-header-text: var(--color-black);
+  --card-header-background: var(--color-primary);
+  --card-color-link: var(--color-link);
+
+  // Icons
+  --icon-color: var(--color-text);
+  --icon-background-color: transparent;
+  --icon-color-hover: var(--color-text);
+  --icon-background-color-hover: transparent;
+
+  // Header
+  --header-background: var(--color-background);
+  --header-color: var(--color-text);
+  --header-link-color: var(--color-text);
+  --header-link-color-hover: var(--color-text);
+
+  // Footer
+  --footer-color: var(--color-text);
+  --footer-link-color: var(--color-link);
+  --footer-background: var(--color-background-muted);
+  --footer-padding: var(--space-6);
+  --footer-alignment: center;
+}
+
+.dark-mode {
+  @include dark-mode;
+}
+
+@mixin blue-mode {
+  --color-white: #ffffff;
+  --color-black: #222222;
+  --color-dark-gray: #383838;
+  --color-gray: #9d9d9d;
+  --color-light-gray: #c9c9c9;
+  --color-primary: #57BFDF;
+  --color-primary-lighter: #faece6;
+  --color-secondary: #08279C;
+  --color-tertiary: #e86c81;
+  --color-quaternary: #FAD375;
+  --color-quinary: #B486FF;
+  --color-navigation-background: #e8eef3;
+  --color-navigation-text: var(--color-text);
+}
+
+.blue-mode {
+  @include blue-mode;
+}
+
+
+@mixin red-mode {
+  --color-white: #ffffff;
+  --color-black: #222222;
+  --color-dark-gray: #383838;
+  --color-gray: #9d9d9d;
+  --color-medium-gray: #d5d5d5;
+  --color-light-gray: #F3F3F7;
+  --color-primary: #EE3023;
+  --color-primary-lighter: #e86c81;
+  --color-secondary: #60BDEA;
+  --color-tertiary: #e86c81;
+  --color-quaternary: #FAD375;
+  --color-quinary: #32814F;
+  --color-navigation-background: var(--color-primary);
+  --color-navigation-text: var(--color-white);
+}
+
+.red-mode {
+  @include red-mode;
+}
