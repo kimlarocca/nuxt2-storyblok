@@ -1,4 +1,4 @@
-# equalicert essentials
+# Nuxt 3 / Storyblok Boilerplate Starter Project
 
 ## Build Setup
 
