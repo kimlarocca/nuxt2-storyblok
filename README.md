@@ -1,4 +1,4 @@
-# equal-time-app
+# equalicert essentials
 
 ## Build Setup
 
