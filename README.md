@@ -1,4 +1,4 @@
-# Nuxt 3 / Storyblok Boilerplate Starter Project
+# Nuxt 2 / Storyblok Boilerplate Starter Project
 
 ## Build Setup
 
