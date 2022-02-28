@@ -3,7 +3,7 @@
     <h1>Tags</h1>
     <v-spacer />
     <p v-for="(tag, index) in tags" :key="index">
-      <nuxt-link :to="`/${tag.name}`"> {{ tag.name }} </nuxt-link>({{
+      <nuxt-link :to="`/tags/${tag.name}`"> {{ tag.name }} </nuxt-link>({{
         tag.taggings_count
       }})
     </p>

@@ -1,5 +1,5 @@
 {
-  "name": "equal-time-app",
+  "name": "nuxt2-storyblok",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -43,8 +43,7 @@
     "prettier": "^2.5.1",
     "sass": "^1.49.8",
     "sass-loader": "^10.2.1",
-    "vue-apexcharts": "^1.6.2",
-    "vue-evolve": "github:kimlarocca/vue-evolve#23edeb1de26ac1b5f6c4421205d6365c91adcdad",
+    "vue-evolve": "github:kimlarocca/vue-evolve#93fcbb48dcadc23359f7ed49b86d424422bbf519",
     "vue-jest": "^3.0.4",
     "vue-lottie": "^0.2.1"
   }

@@ -1,8 +1,17 @@
-# Nuxt 3 / Storyblok Boilerplate Starter Project
+# Nuxt 2 / Storyblok Boilerplate Starter Project
+
+## Storyblok Setup
+
+Add your Storyblok public access token to the nuxt.config.js in the modules section. You can find your public access token in Settings -> API-Keys
+
+In Storyblok, under Settings -> General -> Location, use `http://localhost:3000/preview/` to enable live updates in Storyblok while you develop.
 
 ## Build Setup
 
 ```bash
+# check your node version and use 14.17
+$ nvm use 14.17
+
 # install dependencies
 $ npm install
 
