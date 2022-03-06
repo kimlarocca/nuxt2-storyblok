@@ -19,36 +19,36 @@ $xlarge: 1400px;
   --color-dark-gray: #000e29;
   --color-gray: #d3d3d3;
   --color-light-gray: #f0f0f0;
-  --color-primary: #000e29;
-  --color-primary-lighter: #02293E;
-  --color-secondary: #a7e2e3; // 167, 226, 227
-  --color-secondary-lighter: #EFF9F9;
-  --color-secondary-darker: #4bbec0;
-  --color-tertiary: #7F7CAF; // 127, 124, 175
-  --color-tertiary-lighter: #CCCCDE;
-  --color-tertiary-darker: #3E3E74;
+  --color-primary: #002e3b;
+  --color-primary-lighter: #002e3b;
+  --color-secondary: #00dc82; // 167, 226, 227
+  --color-secondary-lighter: #00dc82;
+  --color-secondary-darker: #00dc82;
+  --color-tertiary: #00dc82; // 127, 124, 175
+  --color-tertiary-lighter: #00dc82;
+  --color-tertiary-darker: #00dc82;
   --color-quaternary: #f2cc8f; // 242, 204, 143
-  --color-quaternary-lighter: #fcf2e9;
-  --color-quaternary-darker: #db9f3d;
+  --color-quaternary-lighter: #f2cc8f;
+  --color-quaternary-darker: #f2cc8f;
   --color-quinary: #000e29;
   --color-navigation-background: var(--color-primary);
   --color-navigation-text: var(--color-white);
   --color-icons: var(--color-tertiary);
 
-  --color-red: #DF3226;
+  --color-red: #df3226;
   --color-medium-red: #e86c81;
   --color-light-red: #eab8b4;
-  --color-orange: #EC573C;
+  --color-orange: #ec573c;
   --color-yellow: #f2cc8f;
   --color-light-yellow: #fde7b9;
-  --color-green: #00A100;
+  --color-green: #00a100;
   --color-medium-green: #61db8e;
   --color-light-green: #d2e5d9;
 
   // Fonts
-  --font-family-primary: "Hind", Helvetica, Arial, sans-serif;
-  --font-family-secondary: "Prompt", Helvetica, Arial, sans-serif;
-  --font-family-fa: "Font Awesome 5 Free", serif;
+  --font-family-primary: 'Hind', Helvetica, Arial, sans-serif;
+  --font-family-secondary: 'Prompt', Helvetica, Arial, sans-serif;
+  --font-family-fa: 'Font Awesome 5 Free', serif;
 
   // Font Levers
   --font-base: 18px;
@@ -165,11 +165,11 @@ $xlarge: 1400px;
   li {
     @include typeface(primary, 5);
     font-weight: 300;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     @media all and (min-width: $medium) {
       @include typeface(primary, 6);
       font-weight: 300;
-      letter-spacing: .5px;
+      letter-spacing: 0.5px;
     }
   }
 
@@ -208,8 +208,8 @@ $xlarge: 1400px;
   --grid-gutter-large: 72px;
 
   // Animation
-  --transition: .25s ease-out;
-  --opacity-on-hover: .7;
+  --transition: 0.25s ease-out;
+  --opacity-on-hover: 0.7;
 
   // Main Styles
   --color-text: var(--color-black);
@@ -309,11 +309,11 @@ $xlarge: 1400px;
   --color-dark-gray: #383838;
   --color-gray: #9d9d9d;
   --color-light-gray: #c9c9c9;
-  --color-primary: #60BDEA;
-  --color-secondary: #EA6078;
+  --color-primary: #60bdea;
+  --color-secondary: #ea6078;
   --color-tertiary: #6078ea;
-  --color-quaternary: #1B213B;
-  --color-quinary: #262D47;
+  --color-quaternary: #1b213b;
+  --color-quinary: #262d47;
 
   // Main Styles
   --color-text: var(--color-text-inverse);
@@ -386,12 +386,12 @@ $xlarge: 1400px;
   --color-dark-gray: #383838;
   --color-gray: #9d9d9d;
   --color-light-gray: #c9c9c9;
-  --color-primary: #57BFDF;
+  --color-primary: #57bfdf;
   --color-primary-lighter: #faece6;
-  --color-secondary: #08279C;
+  --color-secondary: #08279c;
   --color-tertiary: #e86c81;
-  --color-quaternary: #FAD375;
-  --color-quinary: #B486FF;
+  --color-quaternary: #fad375;
+  --color-quinary: #b486ff;
   --color-navigation-background: #e8eef3;
   --color-navigation-text: var(--color-text);
 }
@@ -400,20 +400,19 @@ $xlarge: 1400px;
   @include blue-mode;
 }
 
-
 @mixin red-mode {
   --color-white: #ffffff;
   --color-black: #222222;
   --color-dark-gray: #383838;
   --color-gray: #9d9d9d;
   --color-medium-gray: #d5d5d5;
-  --color-light-gray: #F3F3F7;
-  --color-primary: #EE3023;
+  --color-light-gray: #f3f3f7;
+  --color-primary: #ee3023;
   --color-primary-lighter: #e86c81;
-  --color-secondary: #60BDEA;
+  --color-secondary: #60bdea;
   --color-tertiary: #e86c81;
-  --color-quaternary: #FAD375;
-  --color-quinary: #32814F;
+  --color-quaternary: #fad375;
+  --color-quinary: #32814f;
   --color-navigation-background: var(--color-primary);
   --color-navigation-text: var(--color-white);
 }

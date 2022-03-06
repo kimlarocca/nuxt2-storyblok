@@ -6,7 +6,7 @@
         <div class="logo">
           <nuxt-link to="/" class="logo">
             <img src="/logo.png" alt="logo" />
-            <h6>Your Company Name</h6>
+            <h6>Company Name</h6>
           </nuxt-link>
         </div>
       </template>

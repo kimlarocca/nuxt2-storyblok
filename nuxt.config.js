@@ -10,7 +10,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Nuxt 3 / Storyblok Boilerplate Starter Project',
+    title: 'Nuxt 2 / Storyblok Boilerplate Starter Project',
     htmlAttrs: {
       lang: 'en'
     },
@@ -23,7 +23,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Nuxt 3 / Storyblok Boilerplate Starter Project'
+        content: 'Nuxt 2 / Storyblok Boilerplate Starter Project'
       }
     ],
     script: [
@@ -105,7 +105,7 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {
+  build: {
     // this is needed to transpile es6 modules imported from radial
     transpile: [
       'vue-evolve'
