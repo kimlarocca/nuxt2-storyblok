@@ -2,7 +2,7 @@
   <div class="blog l-container">
     <h1>The Blog</h1>
     <v-spacer size="triple" />
-    <div class="l-grid l-grid--2up l-grid--large-gutters">
+    <div class="l-grid l-grid--2up l-grid--large-gutters blog-featured-post">
       <nuxt-link :to="`/${stories[0].slug}`" class="blog-post">
         <img
           :src="
@@ -15,12 +15,18 @@
               ? stories[0].content.image.alt
               : stories[0].name
           "
-          height="400"
-          width="600"
         />
       </nuxt-link>
       <div>
-        <p>{{ formatDate(stories[0].published_at) }}</p>
+        <template v-if="stories[0].tag_list.length > 0">
+          <v-tag
+            v-for="(tag, tagIndex) in stories[0].tag_list"
+            :key="tagIndex"
+            :name="tag"
+            :slug="`tags/${tag}`"
+          />
+          <v-spacer />
+        </template>
         <nuxt-link :to="`/${stories[0].slug}`"
           ><h2>{{ stories[0].name }}</h2></nuxt-link
         >
@@ -52,11 +58,17 @@
                 ? story.content.image.alt
                 : story.name
             "
-            height="400"
-            width="600"
           />
-          <p>{{ formatDate(story.published_at) }}</p>
-          <h6>{{ story.name }}</h6>
+          <template v-if="story.tag_list.length > 0">
+            <v-tag
+              v-for="(tag, tagIndex) in story.tag_list"
+              :key="tagIndex"
+              :name="tag"
+              :slug="`tags/${tag}`"
+            />
+            <v-spacer />
+          </template>
+          <h2 class="like-h4">{{ story.name }}</h2>
           <template v-if="story.content.short_description">
             <v-spacer />
             <storyblok-rich-text :content="story.content.short_description" />
@@ -70,8 +82,10 @@
 </template>
 
 <script>
+import helpers from '~/mixins/helpers'
 export default {
   name: 'Home',
+  mixins: [helpers],
   asyncData ({ app, redirect }) {
     return app.$storyapi.get(`cdn/stories/`, {
       version: 'published',
@@ -86,59 +100,6 @@ export default {
     return {
       stories: { content: {} }
     }
-  },
-  methods: {
-    formatDate (date) {
-      // format date and time with javascript
-      const d = new Date(date)
-      // const month = `0${d.getMonth() + 1}`.slice(-2)
-      // get month name
-      const monthName = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-      ][d.getMonth()]
-      // const month = `0${d.getMonth() + 1}`.slice(-2)
-      const day = `0${d.getDate()}`.slice(-2)
-      const year = d.getFullYear()
-      // const hours = `0${d.getHours()}`.slice(-2)
-      // const minutes = `0${d.getMinutes()}`.slice(-2)
-      // return `${day}/${month}/${year} ${hours}:${minutes}`
-      return `${monthName} ${day}, ${year}`
-    }
   }
 }
 </script>
-
-<style lang="scss">
-.blog {
-  .blog-post {
-    border-bottom: none;
-    height: 100%;
-    img {
-      opacity: 1;
-      transition: var(--transition);
-      margin-bottom: var(--space-3);
-      border-radius: 8px;
-    }
-    &:hover {
-      border-bottom: none;
-      opacity: var(--opacity-on-hover);
-    }
-  }
-
-  .blog-post-date {
-    font-size: var(--font-size-4);
-    text-transform: uppercase;
-  }
-}
-</style>

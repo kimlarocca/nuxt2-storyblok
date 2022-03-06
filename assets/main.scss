@@ -87,3 +87,46 @@ code {
 .content-card-content {
   padding: 0 var(--space-6);
 }
+
+// tags
+
+.tag a,
+.tag a:active,
+.tag a:visited {
+  border-bottom: none;
+  &:hover {
+    color: var(--color-text);
+  }
+}
+
+// blog layout
+
+.blog {
+  .blog-post {
+    border-bottom: none;
+    height: 100%;
+    img {
+      opacity: 1;
+      transition: var(--transition);
+      margin-bottom: var(--space-3);
+      border-radius: 8px;
+      max-height: 200px;
+      width: auto;
+    }
+    &:hover {
+      border-bottom: none;
+      opacity: var(--opacity-on-hover);
+    }
+  }
+
+  .blog-featured-post {
+    img {
+      max-height: fit-content;
+    }
+  }
+
+  .blog-post-date {
+    font-size: var(--font-size-4);
+    text-transform: uppercase;
+  }
+}

@@ -127,7 +127,7 @@ $xlarge: 1400px;
 
   h4,
   .like-h4 {
-    color: var(--color-tertiary);
+    color: var(--color-primary);
     @include typeface(primary, 8);
     font-weight: 400;
     @media all and (min-width: $medium) {
@@ -300,6 +300,10 @@ $xlarge: 1400px;
   --footer-background: var(--color-background);
   --footer-padding: var(--space-6);
   --footer-alignment: center;
+
+  // Tags
+  --color-tag-text: var(--color-text);
+  --color-tag-background: var(--color-background-muted);
 }
 
 @mixin dark-mode {
@@ -374,6 +378,10 @@ $xlarge: 1400px;
   --footer-background: var(--color-background-muted);
   --footer-padding: var(--space-6);
   --footer-alignment: center;
+
+  // Tags
+  --color-tag-text: var(--color-text);
+  --color-tag-background: var(--color-background-muted);
 }
 
 .dark-mode {
@@ -415,8 +423,4 @@ $xlarge: 1400px;
   --color-quinary: #32814f;
   --color-navigation-background: var(--color-primary);
   --color-navigation-text: var(--color-white);
-}
-
-.red-mode {
-  @include red-mode;
 }

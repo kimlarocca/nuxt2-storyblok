@@ -43,7 +43,7 @@
     "prettier": "^2.5.1",
     "sass": "^1.49.8",
     "sass-loader": "^10.2.1",
-    "vue-evolve": "github:kimlarocca/vue-evolve#93fcbb48dcadc23359f7ed49b86d424422bbf519",
+    "vue-evolve": "github:kimlarocca/vue-evolve#78cd7bf2b89a0ecd82f22b72b71006fa2a91a233",
     "vue-jest": "^3.0.4",
     "vue-lottie": "^0.2.1"
   }
